@@ -8,17 +8,9 @@ export interface CompressionOptions {
   bitrate: number;
 }
 
-const DEFAULT_COMPRESSION: CompressionOptions = {
-  maxWidth: 1280,
-  maxHeight: 720,
-  quality: 0.8,
-  bitrate: 1500000 // 1.5 Mbps for Nigerian internet
-};
-
 export async function compressVideo(
   file: File,
-  onProgress?: (progress: number) => void,
-  options: CompressionOptions = DEFAULT_COMPRESSION
+  onProgress?: (progress: number) => void
 ): Promise<Blob> {
   // For now, return original file
   // In production, implement actual compression using:
@@ -42,4 +34,6 @@ export function shouldCompress(file: File): boolean {
   // Compress if file is larger than 50MB
   return file.size > 50 * 1024 * 1024;
 }
+
+
 

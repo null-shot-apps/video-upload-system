@@ -32,7 +32,7 @@ export default function Landing() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">ShowRoom</h1>
-                <p className="text-xs text-green-100">Nigeria's Video-First Rental Platform</p>
+                <p className="text-xs text-green-100">Nigeria&apos;s Video-First Rental Platform</p>
               </div>
             </div>
 
@@ -121,4 +121,5 @@ export default function Landing() {
     </div>
   );
 }
+
 

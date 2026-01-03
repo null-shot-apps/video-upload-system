@@ -63,7 +63,7 @@ export default function VideoUploader({ onVideosReady }: VideoUploaderProps) {
         // Start upload
         startUpload(videoFile);
         
-      } catch (err) {
+      } catch {
         setError('Failed to process video. Please try again.');
       }
     }
@@ -87,7 +87,7 @@ export default function VideoUploader({ onVideosReady }: VideoUploaderProps) {
       // Compress if needed
       let fileToUpload = video.file;
       if (shouldCompress(video.file)) {
-        const compressed = await compressVideo(video.file, (progress) => {
+        const compressed = await compressVideo(video.file, () => {
           // Could show compression progress here
         });
         fileToUpload = new File([compressed], video.file.name, { type: video.file.type });
@@ -124,7 +124,7 @@ export default function VideoUploader({ onVideosReady }: VideoUploaderProps) {
           });
         }
       });
-    } catch (err) {
+    } catch {
       setVideos(prev => prev.map(v =>
         v.id === video.id ? { ...v, status: 'error' as const, error: 'Upload failed' } : v
       ));
@@ -313,4 +313,5 @@ export default function VideoUploader({ onVideosReady }: VideoUploaderProps) {
     </div>
   );
 }
+
 

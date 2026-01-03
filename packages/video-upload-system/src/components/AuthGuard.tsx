@@ -45,7 +45,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
               </svg>
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">ShowRoom</h1>
-            <p className="text-gray-600">Nigeria's Video-First Rental Platform</p>
+            <p className="text-gray-600">Nigeria&apos;s Video-First Rental Platform</p>
           </div>
 
           {!user ? (
@@ -91,4 +91,5 @@ export default function AuthGuard({ children }: AuthGuardProps) {
 
   return <>{children}</>;
 }
+
 
